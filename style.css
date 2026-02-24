@@ -25,7 +25,8 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(0, 153, 219, 0.9) 0%,
       rgba(0, 104, 181, 0.9) 50%,
@@ -348,6 +349,63 @@ select {
   color: #475569;
 }
 
+/* Greeting modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 48px;
+  text-align: center;
+  position: relative;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.modal-close {
+  position: absolute;
+  bottom: 10px;
+  left: 31%;
+  transform: translateZ(-1px);
+  background: #ffffff;
+  border: 2px solid #58caff;
+  font-size: 16px;
+  cursor: pointer;
+  color: #58caff;
+  line-height: 1;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: #ffffff;
+  background: #58caff;
+}
+
+.modal-message {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0068b5;
+  margin: 0;
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .hero {
@@ -380,5 +438,11 @@ select {
 
   .teams-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 470px) {
+  .modal-close {
+    display: none;
   }
 }
